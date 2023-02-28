@@ -17,8 +17,10 @@
     
       readBtns[index].addEventListener('click', function(e) {
         e.preventDefault()
-        textDescription.textContent = textDescription.textContent === copiedTxt ? `${textDescription.textContent.slice(0, 15)}....` : copiedTxt;
-        readBtns[index].innerHTML = textDescription.textContent === copiedTxt ? `<span>Read Less</span><i class="bi bi-arrow-up"></i>` : `<span>Read More</span><i class="bi bi-arrow-right"></i>`;
+        textDescription.textContent = textDescription.textContent === copiedTxt ? `${textDescription.textContent.slice(0, 150)}....` : copiedTxt;
+        readBtns[index].classList.toggle('expanded');
+        // readBtns[index].innerHTML = textDescription.textContent === copiedTxt ? `<span>Read Less</span><i class="bi bi-arrow-up"></i>` : `<span>Read More</span><i class="bi bi-arrow-right"></i>`;
+        readBtns[index].innerHTML = textDescription.classList.contains('expanded') ? `<span>Read Less</span><i class="bi bi-arrow-up"></i>` : `<span>Read More</span><i class="bi bi-arrow-right"></i>`;
       });
     });
   }
@@ -298,6 +300,7 @@
       mirror: false
     });
   }
+  
   window.addEventListener('load', () => {
     aos_init();
   });

@@ -2402,3 +2402,14 @@ section {
   font-size: 13px;
   color: #012970;
 }
+
+.text__desc {
+  overflow: hidden; /* hide overflow content */
+  max-height: 300px; /* set max-height to limit the visible text */
+  transition: max-height 0.3s ease-in-out; /* add transition for max-height */
+  overflow-y: auto; 
+}
+
+.text__desc.expanded {
+  max-height: none; /* set max-height to none to allow full text to be visible */
+}
